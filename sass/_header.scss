@@ -1,0 +1,28 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+@layer components {
+  .site-header { position: relative; z-index: 5; border-bottom: 1px solid rgba(23,43,42,.1); background: $color-paper; }
+  .site-header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 5.25rem; gap: $space-4; }
+  .brand { display: inline-flex; align-items: center; gap: .65rem; font-size: 1.25rem; font-weight: 850; letter-spacing: -.04em; text-decoration: none; }
+  .brand__mark { display: grid; place-items: center; width: 2.2rem; aspect-ratio: 1; border-radius: .7rem; background: $color-primary; color: $color-white; font-family: $font-display; font-size: 1.35rem; }
+  .site-nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.5rem); }
+  .site-nav a, .site-footer nav a { font-size: .92rem; font-weight: 700; text-decoration: none; color: $color-muted; }
+  .site-nav a[aria-current="page"] { color: $color-primary; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .5rem; }
+  .nav-toggle { display: none; border: 1px solid $color-line; border-radius: .65rem; background: transparent; padding: .5rem .75rem; color: $color-ink; }
+  .site-footer { padding-block: 2.5rem; background: $color-ink; color: $color-white; }
+  .site-footer__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .brand--footer { color: $color-white; }
+  .brand--footer .brand__mark { background: $color-accent; color: $color-ink; }
+  .site-footer p, .site-footer small { color: #D2DEDA; font-size: .875rem; }
+  .site-footer nav { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  .site-footer nav a { color: #F3F6F3; }
+}
+@media (max-width: 680px) {
+  .nav-toggle { display: inline-flex; }
+  .site-nav { display: none; position: absolute; top: calc(100% - 1px); inset-inline: 0; padding: 1rem 1.25rem 1.5rem; flex-direction: column; align-items: stretch; gap: 0; background: $color-paper; border-bottom: 1px solid $color-line; }
+  .site-nav.is-open { display: flex; }
+  .site-nav a { padding: .8rem .25rem; }
+  .site-nav a[aria-current="page"] { text-underline-offset: .2rem; }
+  .site-footer__inner { align-items: flex-start; flex-direction: column; }
+}

@@ -1,0 +1,44 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "spacing" as *;
+@layer reset, base, layout, components, utilities;
+@layer reset {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, p, figure, dl, dd { margin: 0; }
+  img, video { display: block; max-width: 100%; }
+  button, input, textarea, select { font: inherit; }
+}
+@layer base {
+  body { background: $color-paper; color: $color-ink; font-family: $font-body; font-size: $font-size-base; line-height: $line-height-body; }
+  h1, h2, h3 { line-height: $line-height-heading; letter-spacing: -0.035em; }
+  h1, h2 { font-family: $font-display; font-weight: 500; }
+  h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.3rem); }
+  h3 { font-size: 1.35rem; }
+  p + p { margin-top: $space-4; }
+  a { color: inherit; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid $color-focus; outline-offset: 4px; border-radius: 3px; }
+  ::selection { color: $color-ink; background: $color-accent-soft; }
+}
+@layer utilities {
+  .container { width: min(calc(100% - 2.5rem), $container-max); margin-inline: auto; }
+  .section-space { padding-block: clamp(4rem, 8vw, 7rem); }
+  .eyebrow { color: $color-primary; font-size: .75rem; font-weight: 800; letter-spacing: .16em; line-height: 1.5; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .skip-link { position: absolute; z-index: 100; top: .75rem; left: .75rem; transform: translateY(-200%); padding: .75rem 1rem; background: $color-white; color: $color-ink; border: 2px solid $color-primary; border-radius: .5rem; }
+  .skip-link:focus { transform: translateY(0); }
+  .text-link { display: inline-flex; align-items: center; gap: .5rem; width: fit-content; color: $color-primary; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+  .button { display: inline-flex; justify-content: center; align-items: center; gap: .75rem; min-height: 3rem; padding: .75rem 1.25rem; border: 2px solid transparent; border-radius: $radius-pill; font-weight: 750; text-decoration: none; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+  .button--primary { background: $color-primary; color: $color-white; }
+  .button--primary:hover { background: $color-primary-hover; }
+  .button--light { background: $color-white; color: $color-ink; }
+  .button--outline { border-color: $color-line; background: transparent; color: $color-ink; }
+  .button--small { min-height: 2.5rem; padding: .45rem .9rem; font-size: $font-size-small; }
+  .field-help { color: $color-muted; font-size: $font-size-small; }
+  .status-dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: $color-primary; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

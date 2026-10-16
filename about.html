@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about StoryCast's mission and the accessibility features that make stories easier to experience.">
+  <title>About & Access — StoryCast</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="site-header__inner container">
+    <a class="brand" href="index.html" aria-label="StoryCast home"><span class="brand__mark" aria-hidden="true">S</span><span>StoryCast</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">☰</span></button>
+    <nav class="site-nav" id="primary-nav" aria-label="Main navigation"><a href="index.html">Discover</a><a href="story/story.html">Featured story</a><a href="about.html" aria-current="page">About & access</a></nav>
+  </div></header>
+  <main id="main">
+    <section class="page-hero container"><p class="eyebrow">WHY WE'RE HERE</p><h1>Stories make room <em>for us all.</em></h1><p class="page-hero__intro">StoryCast is an independent storytelling concept built around a simple idea: access should be part of the story from the beginning, not added at the end.</p></section>
+    <section class="about-layout container section-space" aria-labelledby="mission-title">
+      <div class="about-layout__main"><p class="eyebrow">OUR MISSION</p><h2 id="mission-title">Make listening and watching feel welcoming.</h2><p>We bring together personal audio and short-form video that help people see familiar experiences from a new angle. We value honest voices, thoughtful editing, and clear context so audiences can spend less time figuring out the interface and more time with the story.</p><p>StoryCast is a prototype microsite. The stories and artwork shown here are illustrative examples created for a student project, rather than a claim of published journalism.</p></div>
+      <aside class="access-panel" aria-labelledby="access-title"><span class="access-panel__icon" aria-hidden="true">◎</span><h2 id="access-title">Access is part of the design</h2><p>We aim to offer more than one way to follow every story.</p><ul class="check-list"><li>Captions for spoken video and meaningful sounds</li><li>Readable transcripts for audio and video</li><li>Keyboard-friendly navigation and visible focus</li><li>Clear headings, descriptive links, and meaningful alt text</li><li>Color contrast designed to meet WCAG 2.1 AA</li><li>Responsive layouts with support for reduced motion</li></ul></aside>
+    </section>
+    <section class="principles section-space" aria-labelledby="principles-title"><div class="container"><p class="eyebrow">OUR PRINCIPLES</p><h2 id="principles-title">Designed with people in mind.</h2><div class="principle-grid">
+      <article class="principle"><span aria-hidden="true">01</span><h3>Human first</h3><p>People are more than a headline. We give voices context and space.</p></article>
+      <article class="principle"><span aria-hidden="true">02</span><h3>Access by default</h3><p>Captions, transcripts, focus states, and flexible layouts are part of the experience.</p></article>
+      <article class="principle"><span aria-hidden="true">03</span><h3>Curiosity over assumption</h3><p>We invite audiences to listen openly and meet different perspectives with care.</p></article>
+    </div></div></section>
+    <section class="contact-band"><div class="container contact-band__inner"><div><p class="eyebrow">TAKE PART</p><h2>Have a story to share?</h2><p>We welcome story ideas and feedback on how to make this experience more accessible.</p></div><a class="button button--primary" href="mailto:hello@storycast.example?subject=StoryCast%20story%20idea">Send a story idea <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container site-footer__inner"><a class="brand brand--footer" href="index.html"><span class="brand__mark" aria-hidden="true">S</span><span>StoryCast</span></a><p>Human stories, thoughtfully shared.</p><nav aria-label="Footer navigation"><a href="index.html">Discover</a><a href="story/story.html">Featured story</a></nav><small>© <span data-year>2026</span> StoryCast. A learning project.</small></div></footer>
+</body>
+</html>
